@@ -1,0 +1,2 @@
+ //skakanie
+        if(Input.GetButtonDown("Jump") && isGrounded)

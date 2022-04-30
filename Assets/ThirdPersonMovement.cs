@@ -20,7 +20,15 @@ public class ThirdPersonMovement : MonoBehaviour
     bool isGrounded;
     //skakanie
     public float jumpHeight = 3f;
-    public bool canDoubleJump = false;
+    private bool canDoubleJump = false;
+    public int numberOfJumps = 2;
+
+    private float coyoteTime = 1f;
+    private float coyoteTimeCounter;
+
+    private float jumpBufferTime = 0.2f;
+    private float jumpBufferCounter;
+
 
     private void Start()
     {
@@ -55,29 +63,57 @@ public class ThirdPersonMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
 
+        
+
+
+
         //skakanie
-        if(Input.GetButtonDown("Jump") && isGrounded)
+        if ((jumpBufferCounter > 0f) && (coyoteTimeCounter > 0))
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-            canDoubleJump = true;
+            jumpBufferCounter = 0f;
+            
             
            
 
         }
+        if (Input.GetButtonUp("Jump") && velocity.y > 0f)
+        {
+            coyoteTimeCounter = 0f;
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity) * 0.5f;
+        }
         //skok po zbiegnieciu z platformy
         if (isGrounded)
         {
+            coyoteTimeCounter = coyoteTime;
             canDoubleJump = true;
 
         }
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
         //podwójne skakanie
+      
+        if (Input.GetButtonDown("Jump"))
+        {
+            jumpBufferCounter = jumpBufferTime;
+        }
+        else
+        {
+            jumpBufferCounter -= Time.deltaTime;
+        }
+
         if (Input.GetButtonDown("Jump") && !isGrounded && (canDoubleJump == true))
-            {
+        {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             canDoubleJump = false;
-             }
+        }
 
-
+        if (Input.GetButtonDown("Jump"))
+            {
+            
+        }
 
     }
 }
