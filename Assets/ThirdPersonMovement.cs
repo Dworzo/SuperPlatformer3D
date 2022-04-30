@@ -8,6 +8,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public CharacterController controller;
     public Transform cam;
     public float speed = 6f;
+    public float turbo = 2f;
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
     
@@ -110,11 +111,16 @@ public class ThirdPersonMovement : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             canDoubleJump = false;
         }
-
-        if (Input.GetButtonDown("Jump"))
+        //dopalacz nitro
+        if (Input.GetButtonDown("Fire3"))
             {
-            
+            speed = speed * turbo;
         }
+        if (Input.GetButtonUp("Fire3"))
+        {
+            speed = speed/turbo;
+        }
+
 
     }
 }
