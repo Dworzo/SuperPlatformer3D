@@ -72,9 +72,10 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             jumpBufferCounter = 0f;
-            
-            
-           
+            canDoubleJump = true;
+
+
+
 
         }
         if (Input.GetButtonUp("Jump") && velocity.y > 0f)
