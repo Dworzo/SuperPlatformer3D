@@ -24,7 +24,7 @@ public class ThirdPersonMovement : MonoBehaviour
     private bool canDoubleJump = false;
     public int numberOfJumps = 2;
 
-    private float coyoteTime = 1f;
+    private float coyoteTime = 0.3f;
     private float coyoteTimeCounter;
 
     private float jumpBufferTime = 0.2f;
@@ -95,7 +95,7 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             coyoteTimeCounter -= Time.deltaTime;
         }
-        //podwójne skakanie
+        //RESPONSYWNE SKAKANIE
       
         if (Input.GetButtonDown("Jump"))
         {
@@ -105,12 +105,12 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             jumpBufferCounter -= Time.deltaTime;
         }
-
-        if (Input.GetButtonDown("Jump") && !isGrounded && (canDoubleJump == true))
-        {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-            canDoubleJump = false;
-        }
+        //podwójne skakanie
+        //  if (Input.GetButtonDown("Jump") && !isGrounded && (canDoubleJump == true))
+        //  {
+        //      velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        //      canDoubleJump = false;
+        //   }
         //dopalacz nitro
         if (Input.GetButtonDown("Fire3"))
             {
