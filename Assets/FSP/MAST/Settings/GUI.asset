@@ -15,8 +15,8 @@ MonoBehaviour:
   grid:
     xzUnitSize: 4
     yUnitSize: 4
-    cellCount: 50
-    gridHeight: 5
+    cellCount: 100
+    gridHeight: 23
     tintColor: {r: 0.23834105, g: 0.389676, b: 0.49056602, a: 0.15686275}
   palette:
     bgColor: 0

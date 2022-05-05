@@ -106,11 +106,11 @@ public class ThirdPersonMovement : MonoBehaviour
             jumpBufferCounter -= Time.deltaTime;
         }
         //podwójne skakanie
-        //  if (Input.GetButtonDown("Jump") && !isGrounded && (canDoubleJump == true))
-        //  {
-        //      velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-        //      canDoubleJump = false;
-        //   }
+          if (Input.GetButtonDown("Jump") && !isGrounded && (canDoubleJump == true))
+          {
+              velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+              canDoubleJump = false;
+           }
         //dopalacz nitro
         if (Input.GetButtonDown("Fire3"))
             {
