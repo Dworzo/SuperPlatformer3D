@@ -113,3 +113,4 @@ MonoBehaviour:
   - {fileID: 4136419071794253720, guid: 83a24da675850d342b89517b94ad5d65, type: 3}
   - {fileID: 4423360059026478664, guid: d03d100c460f014429fc9d4a737c6410, type: 3}
   - {fileID: 3729177788642613363, guid: b2484fb33f91e0d4d87270664e2116a2, type: 3}
+  player: {fileID: 0}

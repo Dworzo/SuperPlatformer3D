@@ -5,7 +5,7 @@ using TMPro;
 
 public class GrowingFlower : MonoBehaviour
 {
-    private float coin = 0;
+    
     public Collider flowerCollider;
     
 
