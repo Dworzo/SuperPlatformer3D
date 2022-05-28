@@ -231,6 +231,7 @@ MonoBehaviour:
   controller: {fileID: 6356577234027686736}
   cam: {fileID: 0}
   speed: 10
+  turbo: 2
   turnSmoothTime: 0.1
   gravity: -19.62
   groundCheck: {fileID: 6356577234326050667}
@@ -239,6 +240,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   jumpHeight: 4
+  numberOfJumps: 2
 --- !u!1 &6356577234326050664
 GameObject:
   m_ObjectHideFlags: 0
