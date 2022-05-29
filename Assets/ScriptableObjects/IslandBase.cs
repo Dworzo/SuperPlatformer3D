@@ -9,7 +9,10 @@ public class IslandBase : ScriptableObject
   public int scaleMin;
   public  int scaleMax;
     [Range(1.0f, 10.0f)]
-    public float scaleX;
+    public float costam;
+    [SerializeField] private Vector2 scaleX;
+    [SerializeField] private Vector2 scaleY;
+    [SerializeField] private Vector2 scaleZ;
     void Start()
     {
         
